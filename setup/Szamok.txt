@@ -1,0 +1,62 @@
+####################################################
+>>>>> Magyar Számok helyesírása ActiveX modul <<<<<<
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+	1.3.26-os verzió - Muráti Ákos
+
+Ez a modul lehetõvé teszi, hogy számokat tudjunk átírni
+szöveges alakká és szövegek vissza számmá, a lehetõ
+legegyszerûbb módon. A program kezel egész illetve
+tizedes törteket is.
+
+A program ingyenes, viszont másolni, csak ezzel a
+fájllal együtt, módosítás nélkül terjesztheted. Ha
+beépíted valamilyen programodba, akkor köteles
+vagy feltüntetni az alábbi szöveget a programodban:
+"Magyar Számok helyesírása ActiveX - Muráti Ákos"
+
+Az ActiveX futtatásához telepítve kell lenni
+Microsoft Visual Basic 6 Runtime fájloknak!
+
+Az esetleges hibákért felelõsséget nem vállalok, de
+ha visszajelzel, akkor orvosolhatjuk azt.
+
+Muráti Ákos 2003. nov. 8.
+
+
+Telepítés:
+~~~~~~~~~~
+	1.)Másold be a "szamok.dll"-t a Windowsod System könyvtárába
+	2.)Regisztráld. (regsvr32.exe /i szamok.dll)
+vagy
+	futtasd a neked megfelelõ batch fájlt.
+
+
+A DLLInstall-ra  hibát ír ki, de ne is törõdj vele(A legtöbb ActiveX-nél
+ezt írja ki).
+
+
+
+Használat: Ahhoz, hogy használhassuk, importálnunk kell
+~~~~~~~~~~ a szamok.dll-t a programunkba. Az osztályazonosítója:
+"Szamok.Irasa"
+
+	Importálás VB vagy VBScript-be:
+		Dim szamok_AX
+		Set szamok_AX = Createobject("Szamok.Irasa")
+
+	Importálás Delphi-be:
+		
+Függvények:
+~~~~~~~~~~~
+(A Szam double típusú érték, a Szoveg pedig string típusú érték lehet.)
+
+szamok_AX.szamot_szovegge(Szam) függvény visszatérési értéke a Szam leírott alakja(string).
+szamok_AX.szoveget_szamma(Szoveg) függvény visszatérési értéke a Szoveg számbeli alakja(double).
+szamok_AX.nevjegy() a Szamok.dll névjegyét adja vissza szövegesen
+
+Nyílt tuljadonságok:
+~~~~~~~~~~~~~~~~~~~~
+szamok_AX.Ellenorzes = True/False A szoveget_szamma függvényben a kapott értéket ellenõrzi, ha a
+szöveg és a kapott szám szöveggé konvertálva nem egyenlõ, akkor 0-t ad vissza.
+
